@@ -1,12 +1,33 @@
+// changing individual properties with code and using setInterval
+var rotationSpeed = 0.005;
+var speedMultiplier = 0;
+var height = 0.5;
+var speedUp = true;
+var myOtherBox = document.getElementById('myOtherBox');
 
+function spin(){
+  if (speedMultiplier > 15 && speedUp == true) {
+    speedUp = false;
+  }
+  if (speedMultiplier <= 0 && speedUp == false) {
+    speedUp = true;
+    speedMultiplier = 0;
+    height = 0.5;
+  }
 
-// // changing individual properties with code and using setInterval
-// var rotationSpeed = 0.01;
-// var myOtherBox = document.getElementById('myOtherBox');
+  if (speedMultiplier >= 0 && speedUp == true) {
+    speedMultiplier = speedMultiplier + 0.1;
+    height = height + 0.05;
+  } else {
+    speedMultiplier = speedMultiplier - 0.1;
+    height = height - 0.05;
+  }
 
-// function spin(){
-// 	myOtherBox.object3D.rotation.x += rotationSpeed;
-// 	console.log(myOtherBox.object3D.rotation.x);
-// }
+	myOtherBox.object3D.rotation.x -= rotationSpeed * speedMultiplier;
+	myOtherBox.object3D.rotation.y -= rotationSpeed * speedMultiplier;
+	myOtherBox.object3D.rotation.z -= rotationSpeed * speedMultiplier;
 
-// setInterval(spin, 16); //equivalent to 60 fps
+  myOtherBox.object3D.position.y = height;
+}
+
+setInterval(spin, 16, speedMultiplier, speedUp); //equivalent to 60 fps

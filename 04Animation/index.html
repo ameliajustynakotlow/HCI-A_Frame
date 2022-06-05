@@ -14,38 +14,39 @@
           <img id="wood2" src="images/wood2.jpg" />
           <img id="grass" src="images/grass.jpg" />
       </a-assets>
-      <a-box id="myBox" 
-        position="-1 1 -3" 
-        rotation="0 45 0" 
-        width="3" 
-        height="1" 
-        depth="1" 
-        material="src: #wood"
-        shadow 
-        animation="property: rotation; 
-                   to: 90 360 180; 
-                   dur: 2000; 
-                   easing: linear; 
-                   loop: true" >
+      <a-box id="myBox"
+        position="-1 1 -3"
+        rotation="0 45 0"
+        width="3"
+        height="1"
+        depth="1"
+        shadow
+        animation="property: rotation;
+                   to: 90 360 180;
+                   dur: 2000;
+                   easing: linear;
+                   loop: true"
+       material="src: #wood"
+       >
       </a-box>
-      <a-box id="myOtherBox" 
-        position="2 1 -3" 
-        rotation="0 45 0" 
-        width="3" 
-        height="1" 
-        depth="1" 
+      <a-box id="myOtherBox"
+        position="2 1 -3"
+        rotation="0 45 0"
+        width="3"
+        height="1"
+        depth="1"
         material="src: #wood2"
-        shadow>  
+        shadow>
       </a-box>
       <a-plane id="ground"
-        position="0 0 -4" 
-        rotation="-90 0 0" 
-        width="100" 
-        height="100" 
-        color="#7BC8A4" 
+        position="0 0 -4"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        color="#7BC8A4"
         material="src: #grass; repeat: 10 10"
         shadow>
-      </a-plane> 
+      </a-plane>
     </a-scene>
   </body>
 </html>
